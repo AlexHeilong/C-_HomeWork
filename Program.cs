@@ -110,7 +110,7 @@ _____________________________________________________________
 Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, 
 и проверяет, является ли этот день выходным.
 
-*/
+
 
 bool isDayOff(int n)
 {
@@ -124,4 +124,85 @@ int num = Convert.ToInt32(Console.ReadLine());
 bool holliday = isDayOff(num);
 
 Console.WriteLine(holliday);
+
+_______________________________________
+_______________________________________
+*/
+/*
+Домашняя работа к семинару 3.
+_____________________
+
+Задача 19
+
+Напишите программу, которая принимает на вход пятизначное число и проверяет, 
+является ли оно палиндромом.
+
+void Palindrome(int num)
+{
+    if(num / 10000 == num % 10 && num / 1000 % 10 == num % 100 / 10) 
+    Console.WriteLine("It's Palindrome");
+    else Console.WriteLine("It is not Palindrome"); 
+}
+Console.Write("Input five-digit number: ");
+int number = Convert.ToInt32(Console.ReadLine()); 
+Palindrome(number); 
+______________________________
+
+/*
+Задача 21
+
+Напишите программу, которая принимает на вход координаты двух точек
+и находит расстояние между ними в 3D пространстве.
+
+A (3,6,8); B (2,1,-7), -> 15.84
+
+A (7,-5, 0); B (1,-1,9) -> 11.53
+
+
+
+double Dist(double xa, double ya, double za, double xb, double yb, double zb)
+{
+    double dist = Math.Sqrt((xb-xa)*(xb-xa) + (yb-ya)*(yb-ya) + (zb-za)*(zb-za));
+    return dist;
+}
+Console.Write("Введите координаты x точки А: ");
+double xa = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координаты y точки А: ");
+double ya = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координаты z точки A: ");
+double za = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координаты x точки B: ");
+double xb = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координаты y точки B: ");
+double yb = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите координаты z точки B: ");
+double zb = Convert.ToDouble (Console.ReadLine());
+
+double dist = Dist(xa, xb, ya, yb, za, zb);
+Console.WriteLine($"Расстояние между точками А и В равно {dist} ");
+____________________________________
+
+Задача 23
+
+Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+3 -> 1, 8, 27
+5 -> 1, 8, 27, 64, 125
+*/
+
+void Numbers(double num)
+{
+    int current = 1;
+    while(current <= num)
+    {
+        Console.Write(current*current*current + " ");
+        current++;
+    }
+}
+double check;
+Console.Write("Введите положительное число: ");
+check = Convert.ToDouble(Console.ReadLine()); 
+if(check < 0) check = check * -1;
+Numbers(check);
+
 
