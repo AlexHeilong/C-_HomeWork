@@ -1,5 +1,6 @@
 ﻿/* Seminar 1 Home Work
-Task 1.  Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+Task 1.  Напишите программу, которая на вход принимает два числа и выдаёт, 
+какое число большее, а какое меньшее.
 /*
 int num1, num2;
 
@@ -15,7 +16,8 @@ if(num1 < num2)
 else Console.WriteLine("Числа равны");
  
 
-// Task 2. Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+// Task 2. Напишите программу, которая принимает на вход три числа 
+и выдаёт максимальное из этих чисел.
 int num1, num2, num3;
 
 Console.Write("input first integer number: ");
@@ -36,7 +38,8 @@ else
     Console.WriteLine("Числа равны");
 }
  
-// Task 3. Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+// Task 3. Напишите программу, которая на вход принимает число и выдаёт, 
+является ли число чётным (делится ли оно на два без остатка).
 Console.Write("input integer number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
@@ -46,7 +49,8 @@ else
     Console.WriteLine("Число " + num + " нечетное"); 
 _________________________
 
-// Task 4. Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+// Task 4. Напишите программу, которая на вход принимает число (N), 
+а на выходе показывает все чётные числа от 1 до N.
 
 Console.Write("input positive integer number: ");
 int num = Convert.ToInt32(Console.ReadLine()); 
@@ -81,8 +85,8 @@ Console.WriteLine(number);
 Console.WriteLine(digit);
 _____________________________________
 
-Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
-что третьей цифры нет.
+Задача 13: Напишите программу, которая выводит третью цифру заданного числа 
+или сообщает, что третьей цифры нет.
 
 int ShowThirdDigit(int n)
 {
@@ -188,7 +192,7 @@ ____________________________________
 
 3 -> 1, 8, 27
 5 -> 1, 8, 27, 64, 125
-*/
+
 
 void Numbers(double num)
 {
@@ -204,5 +208,111 @@ Console.Write("Введите положительное число: ");
 check = Convert.ToDouble(Console.ReadLine()); 
 if(check < 0) check = check * -1;
 Numbers(check);
+*/
+//_____________________________________________
+//_____________________________________________
+// Домашняя работа к семинару 4.
+//
+// Задача 1-1 (нерешенная)
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) 
+// и возводит число A в натуральную степень B.
+/*
+double SquareDigitB(double numA, double numB)
+{
+    double result = 1;
+    for(int i = 0; i < numB; i++)
+    {
+        result = numA * result;
+    }
+    return result;
+}
+Console.Write("Введите любое число: ");
+double numA = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите целое положительное число: ");
+double numB = Convert.ToInt32(Console.ReadLine());
+
+double squareDigitB = SquareDigitB(numA, numB);
+Console.WriteLine(squareDigitB);
 
 
+// Задача 1-2 (с целыми числами)
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) 
+// и возводит число A в натуральную степень B.
+
+int SquareDigitB(int numA, int numB)
+{
+    int result = 1;
+    for(int i = 0; i < numB; i++)
+    {
+        result = numA * result;
+    }
+    return result;
+}
+Console.Write("Введите любое число: ");
+int numA = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите целое положительное число: ");
+int numB = Convert.ToInt32(Console.ReadLine());
+
+int squareDigitB = SquareDigitB(numA, numB);
+Console.WriteLine(squareDigitB);
+*/
+//______________________
+// Задача 2.
+// Задача 27: Напишите программу, которая принимает на вход число 
+// и выдаёт сумму цифр в числе.
+/*
+int SumOfDigits(int num)
+{
+    int result = 0;
+    int i = 0;
+    while(num > 0)
+    {
+        i = num % 10;
+        result = result + i;
+        num = num /10;
+    }
+    return result;
+}
+Console.Write("Введите  число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int sumOfDigits = SumOfDigits(num);
+Console.WriteLine(sumOfDigits);
+__________________________
+
+//Задача 3.
+//Задача 29: Напишите программу, которая задаёт массив из 8 элементов 
+//и выводит их на экран.
+
+int[] CreateArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    }
+        
+        return newArray;
+} 
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+Console.Write("Input size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input positive min value of elements: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input positive max value of elements: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[] array = CreateArray(size, min, max);
+ShowArray(array);
+_______________________________________________
+_______________________________________________
+*/
