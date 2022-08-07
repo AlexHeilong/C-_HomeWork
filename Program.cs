@@ -316,3 +316,140 @@ ShowArray(array);
 _______________________________________________
 _______________________________________________
 */
+// Домашняя работа к семинару 5.
+
+// Задача 1
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными 
+// числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
+/*
+
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    }
+        
+        return newArray;
+} 
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+int EvenDigit(int[] array)
+{
+    int count = 0;
+    for(int i = 0; i < array.Length; i++) 
+    {
+        if(array[i] % 2 == 0) count += 1; 
+    }
+    return count;
+}
+
+Console.Write("Input size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[] array = CreateRandomArray(size, 100, 999);
+ShowArray(array);
+int evenDigit = EvenDigit(array);
+Console.WriteLine($"Количество четных чисел в массиве равно: {evenDigit} ");
+________________________
+*/
+// Задача 2. 
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+/*
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    }
+        
+        return newArray;
+} 
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+int SumOfElements(int[] array)
+{
+    int sum = 0;
+    for(int i = 1; i < array.Length; i = i + 2) 
+    {
+        sum = sum + array[i]; 
+    }
+    return sum;
+}
+
+Console.Write("Input size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[] array = CreateRandomArray(size, 0, 99);
+ShowArray(array);
+int sumOfElements = SumOfElements(array);
+Console.WriteLine($"Сумма элементов, стоящих на нечетных позициях равна: {sumOfElements} ");
+_________________________
+*/
+// Задача 3.
+// Задача 38: Задайте массив вещественных чисел. 
+// Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    }
+        return newArray;
+} 
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+int DifOfElements(int[] array)
+{
+    int min = array[0];
+    int max = array[0];
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] < min) min = array[i];
+        if(array[i] > max) max = array[i];
+
+    }
+    int result = max - min;
+    return result; 
+}
+
+Console.Write("Input size of array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+
+int[] array = CreateRandomArray(size, 0, 99);
+ShowArray(array);
+int difOfElements = DifOfElements(array);
+Console.WriteLine($"Разница между макс и мин элементами равна: {difOfElements} ");
