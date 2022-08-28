@@ -412,7 +412,7 @@ _________________________
 // Задача 38: Задайте массив вещественных чисел. 
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
-
+/*
 int[] CreateRandomArray(int size, int minValue, int maxValue)
 {
     int[] newArray = new int[size];
@@ -453,3 +453,105 @@ int[] array = CreateRandomArray(size, 0, 99);
 ShowArray(array);
 int difOfElements = DifOfElements(array);
 Console.WriteLine($"Разница между макс и мин элементами равна: {difOfElements} ");
+
+___________________________________________
+*/
+// Домашняя работа к семинару 6.
+
+// Задача 1.
+// Задача 41: Пользователь вводит с клавиатуры M чисел. 
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+/*
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for(int i = 0; i < size; i++)
+    {
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    }
+        
+        return newArray;
+} 
+
+int[] CreateArray(int size)
+{
+    int[] newArray = new int[size];
+    for(int i = 0; i < size; i++)
+    {
+        Console.Write($"Input {i + 1} element of {size}: ");
+        newArray[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    return newArray;
+}
+
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
+
+int Count(int[] newArray)
+{
+    int count = 0;
+    for(int i = 0; i < newArray.Length; i++)
+    {
+        if(newArray[i] > 0) count = count + 1;
+    }
+    return count;
+}
+
+Console.Write("Input size of array: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input min possible value of element: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value of element: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[] array = CreateRandomArray(m, min, max); 
+ShowArray(array);
+
+Console.WriteLine($"Чисел больше 0: {Count(array)} ");
+*/
+
+//_________________________
+
+/*
+// Задача 2.
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями 
+// y = k1 * x + b1, y = k2 * x + b2; 
+// значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; 5,5) 
+
+Console.Write("Введите k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b1: ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите b2: ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+ 
+ 
+double x = -(b1 - b2) / (k1 - k2);
+double y = k1 * x + b1;
+ 
+x = Math.Round(x, 3);
+y = Math.Round(y, 3);
+ 
+Console.WriteLine($"Пересечение в точке: ({x};{y})");
+*/
+
+
+
+
+
+
+
+
+
