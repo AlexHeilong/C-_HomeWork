@@ -547,9 +547,185 @@ y = Math.Round(y, 3);
 Console.WriteLine($"Пересечение в точке: ({x};{y})");
 */
 
+//_________________________________________________
+
+// Домашняя работа к семинару 7.
+
+// Задача 1.
+// Задача 47. Задайте двумерный массив размером m×n, 
+// заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+/*
+double[,] CreateRandom2dArray(int rows, int colums)
+{
+    double[,] newArray = new double[rows, colums];
+
+    for(int i = 0; i < rows; i++)  
+    {
+        for(int j = 0; j < colums; j++) 
+        {
+            newArray[i, j] = Convert.ToDouble(new Random().Next(-10, 10));
+        }
+    }
+    return newArray;
+}
+
+void Show2dArray(double[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine(); 
+    }
+    Console.WriteLine(); 
+}
+
+Console.Write("Input number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of colums: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+double[,] array = CreateRandom2dArray(m, n); 
+Show2dArray(array);
+*/
+//_______________________________
 
 
+// Задача 2.
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента 
+// в двумерном массиве, и возвращает значение этого элемента или же указание, 
+// что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
 
+/*
+int[,] CreateRandom2dArray(int rows, int colums, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, colums];
+
+    for(int i = 0; i < rows; i++)  
+    {
+        for(int j = 0; j < colums; j++) 
+        {
+            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return newArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine(); 
+    }
+    Console.WriteLine(); 
+}
+
+Console.Write("Input number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of colums: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input min possible value of element: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value of element: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] array = CreateRandom2dArray(m, n, min, max); 
+Show2dArray(array);
+
+Console.Write("Input number of row: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of colum: ");
+int colums = Convert.ToInt32(Console.ReadLine());
+
+if (rows > array.GetLength(0) || colums > array.GetLength(1))
+{
+    Console.WriteLine("такого элемента нет");
+}
+else
+{
+    Console.WriteLine($"значение элемента {rows} строки и {colums} столбца равно {array[rows,colums]}");
+}
+
+*/
+//__________________________
+
+
+// Задача 3.
+// Задача 52. Задайте двумерный массив из целых чисел. 
+// Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+/*
+int[,] CreateRandom2dArray(int rows, int colums, int minValue, int maxValue)
+{
+    int[,] newArray = new int[rows, colums];
+
+    for(int i = 0; i < rows; i++)  
+    {
+        for(int j = 0; j < colums; j++) 
+        {
+            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return newArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine(); 
+    }
+    Console.WriteLine(); 
+}
+
+Console.Write("Input number of rows: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of colums: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input min possible value of element: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value of element: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] array = CreateRandom2dArray(m, n, min, max); 
+Show2dArray(array);
+
+for (int j = 0; j < array.GetLength(1); j++)
+{
+    double avarage = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        avarage = (avarage + array[i, j]);
+    }
+    avarage = avarage / n;
+    Console.Write(avarage + "; ");
+}
+
+*/
+//_______________________________________________
 
 
 
