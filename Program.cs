@@ -1253,7 +1253,7 @@ Console.WriteLine($"Сумма чисел в промежутке {m} и {n} =  
 // Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 29
 
-
+/*
 int Ak(int m, int n)
 {
     if (m == 0)
@@ -1276,8 +1276,61 @@ Console.WriteLine("Input number n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"m = {m} и n = {n} =  {Ak(m, n)}");
 
+*/
+/*
+string[] array1 = new string[5] {"123", "23", "hello", "world", "res"};
+string[] array2 = new string[array1.Length];
+void SecondArrayWithIF(string[] array1, string[] array2)
+{
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+    if(array1[i].Length <= 3)
+        {
+        array2[count] = array1[i];
+        count++;
+        }
+    }
+}
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+SecondArrayWithIF(array1, array2);
+PrintArray(array2);
+*/
 
+// Написать программу, которая из имеющегося массива строк
+//  формирует массив из строк, длина которых меньше либо равна 3 символам
 
+string[] array = new string[5] {"123", "23", "hello", "world", "res"};
 
+string  [] CreateNewArray(string [] array)
+{
+    string[] newArray = new string [array.Length];
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            newArray[i] = array[i];
+            count++;
+        }
+    }
+    return newArray;
+}
 
+void ShowArray(string [] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    
+    Console.WriteLine();
+}
 
+ShowArray(array);
+ShowArray(CreateNewArray(array));
